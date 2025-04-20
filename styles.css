@@ -1,0 +1,157 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.header-mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-mode-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.top-mode-buttons button.active,
+.top-mode-buttons button:hover {
+    background: #007bff;
+    color: white;
+}
+
+.bottom-mode-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bottom-mode-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 5px;
+    color: white;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-buttons button#start {
+    background-color: #28a745; /* green */
+}
+
+.control-buttons button#stop {
+    background-color: #dc3545; /* red */
+}
+
+.control-buttons button#reset {
+    background-color: #007bff; /* keep existing blue */
+}
+
+.control-buttons button:disabled {
+    background: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.control-buttons button:hover:not(:disabled) {
+    filter: brightness(0.9);
+}
+
+/* Bottom mode buttons colors */
+.bottom-mode-buttons button#short-break-bottom {
+    background-color: #007bff; /* blue */
+}
+
+.bottom-mode-buttons button#long-break-bottom {
+    background-color: #6f42c1; /* purple */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .mode-buttons button,
+    .control-buttons button {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .header-mode {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
